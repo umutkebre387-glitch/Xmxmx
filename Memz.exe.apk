@@ -1,0 +1,6 @@
+new AlertDialog.Builder(this)
+    .setTitle("MEMZ Simulation")
+    .setMessage("SİSTEMİN SİLİNİYOR...\n\n)
+    .setCancelable(false)
+    .setPositiveButton("Tamam", null)
+    .show();
