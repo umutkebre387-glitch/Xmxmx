@@ -1,0 +1,31 @@
+package com.example.robloxlauncher;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.Button;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button launchRoblox = findViewById(R.id.btnLaunch);
+        launchRoblox.setOnClickListener(v -> {
+            Intent launchIntent = getPackageManager()
+                .getLaunchIntentForPackage("com.roblox.client");
+
+            if (launchIntent != null) {
+                startActivity(launchIntent);
+            } else {
+                // Roblox yoksa Play Store'a yönlendir
+                Intent playStore = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=com.roblox.client"));
+                startActivity(playStore);
+            }
+        });
+    }
+}
