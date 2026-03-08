@@ -1,0 +1,18 @@
+<button onclick="startVoice()">🎤 Sesli Sohbet</button>
+
+<script>
+
+function startVoice(){
+
+navigator.mediaDevices.getUserMedia({ audio: true })
+.then(function(stream){
+console.log("Mikrofon açıldı!");
+alert("Sesli sohbet başladı!");
+})
+.catch(function(error){
+alert("Mikrofon açılamadı");
+});
+
+}
+
+</script>
