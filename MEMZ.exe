@@ -1,0 +1,23 @@
+import tkinter as tk
+import random
+
+root = tk.Tk()
+root.title("MEMZ Clean")
+root.geometry("400x200")
+
+label = tk.Label(root, text="MEMZ Clean Simulation", font=("Arial", 16))
+label.pack(pady=20)
+
+def popup():
+    w = tk.Toplevel()
+    w.title("System Error")
+    x = random.randint(0, 800)
+    y = random.randint(0, 500)
+    w.geometry(f"200x100+{x}+{y}")
+    tk.Label(w, text="Error 0xMEMZ").pack(pady=20)
+    root.after(600, popup)
+
+button = tk.Button(root, text="Start Simulation", command=popup)
+button.pack()
+
+root.mainloop()
