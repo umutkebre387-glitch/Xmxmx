@@ -1,0 +1,16 @@
+@echo off
+color 1F
+mode con: cols=100 lines=30
+title BSOD
+cls
+
+echo.
+echo :(
+echo.
+echo Bilgisayariniz bir sorunla karsilasti ve yeniden baslatilmasi gerekiyor.
+echo.
+echo %%0 tamamlandi
+echo.
+echo STOP CODE: CRITICAL_PROCESS_DIED
+
+pause >nul
